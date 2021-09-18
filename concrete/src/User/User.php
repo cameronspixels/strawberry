@@ -20,7 +20,6 @@ use Concrete\Core\Authentication\AuthenticationType;
 use Concrete\Core\Page\Page;
 use Concrete\Core\User\Group\GroupList;
 use Concrete\Core\User\Group\GroupRole;
-use Hautelook\Phpass\PasswordHash;
 use Concrete\Core\Permission\Access\Entity\Entity as PermissionAccessEntity;
 use Concrete\Core\Encryption\PasswordHasher;
 
@@ -252,7 +251,7 @@ class User extends ConcreteObject
                     }
                     $this->uTimezone = $ux->getUserTimezone();
                 } elseif ($ux === -1) {
-                    $this->uID = -1;
+                    $this->uID = 0;
                     $this->uName = t('Guest');
                 }
                 $this->uGroups = $this->_getUserGroups(true);
@@ -1007,25 +1006,6 @@ class User extends ConcreteObject
         $r = $db->query($q);
 
         return $r;
-    }
-
-    /**
-     * @return \Hautelook\Phpass\PasswordHash
-     * @deprecated Use $app->make(\Concrete\Core\Encryption\PasswordHasher::class)
-     *
-     */
-    public function getUserPasswordHasher()
-    {
-        $app = Application::getFacadeApplication();
-        $config = $app['config'];
-        if (isset($this->hasher)) {
-            return $this->hasher;
-        }
-        $this->hasher = new PasswordHash(
-            $config->get('concrete.user.password.hash_cost_log2'),
-            $config->get('concrete.user.password.hash_portable'));
-
-        return $this->hasher;
     }
 
     /**

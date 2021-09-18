@@ -1,0 +1,18 @@
+{
+  "name": "concrete-v9",
+  "version": "1.0.0",
+  "description": "Gulpy",
+  "main": "index.php",
+  "scripts": {
+    "test": "hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "keywords": [
+    "Test"
+  ],
+  "author": "Me",
+  "license": "ISC"
+}

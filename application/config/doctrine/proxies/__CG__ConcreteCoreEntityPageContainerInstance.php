@@ -66,10 +66,10 @@ class Instance extends \Concrete\Core\Entity\Page\Container\Instance implements 
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'containerInstanceID', 'container', 'instanceAreas', 'areasAreComputed'];
+            return ['__isInitialized__', 'containerInstanceID', 'container', 'instanceAreas'];
         }
 
-        return ['__isInitialized__', 'containerInstanceID', 'container', 'instanceAreas', 'areasAreComputed'];
+        return ['__isInitialized__', 'containerInstanceID', 'container', 'instanceAreas'];
     }
 
     /**
@@ -211,28 +211,6 @@ class Instance extends \Concrete\Core\Entity\Page\Container\Instance implements 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContainer', [$container]);
 
         parent::setContainer($container);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function areaAreasComputed()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'areaAreasComputed', []);
-
-        return parent::areaAreasComputed();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setAreasAreComputed($areasAreComputed): void
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAreasAreComputed', [$areasAreComputed]);
-
-        parent::setAreasAreComputed($areasAreComputed);
     }
 
     /**

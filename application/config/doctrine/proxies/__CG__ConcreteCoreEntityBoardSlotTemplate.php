@@ -66,10 +66,10 @@ class SlotTemplate extends \Concrete\Core\Entity\Board\SlotTemplate implements \
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'icon', 'formFactor', 'name', 'handle', 'tags', 'package'];
+            return ['__isInitialized__', 'id', 'icon', 'name', 'handle', 'tags', 'package'];
         }
 
-        return ['__isInitialized__', 'id', 'icon', 'formFactor', 'name', 'handle', 'tags', 'package'];
+        return ['__isInitialized__', 'id', 'icon', 'name', 'handle', 'tags', 'package'];
     }
 
     /**
@@ -255,28 +255,6 @@ class SlotTemplate extends \Concrete\Core\Entity\Board\SlotTemplate implements \
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDisplayName', []);
 
         return parent::getDisplayName();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getFormFactor(): string
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFormFactor', []);
-
-        return parent::getFormFactor();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setFormFactor(string $formFactor): \Concrete\Core\Entity\Board\SlotTemplate
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFormFactor', [$formFactor]);
-
-        return parent::setFormFactor($formFactor);
     }
 
     /**

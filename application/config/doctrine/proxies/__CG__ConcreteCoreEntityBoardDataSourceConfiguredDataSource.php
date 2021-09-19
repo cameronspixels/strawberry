@@ -293,28 +293,6 @@ class ConfiguredDataSource extends \Concrete\Core\Entity\Board\DataSource\Config
     /**
      * {@inheritDoc}
      */
-    public function getPopulationIntervalFuture(): int
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPopulationIntervalFuture', []);
-
-        return parent::getPopulationIntervalFuture();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setPopulationIntervalFuture(int $populationIntervalFuture): void
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPopulationIntervalFuture', [$populationIntervalFuture]);
-
-        parent::setPopulationIntervalFuture($populationIntervalFuture);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getPopulationDayIntervalFuture(): int
     {
 

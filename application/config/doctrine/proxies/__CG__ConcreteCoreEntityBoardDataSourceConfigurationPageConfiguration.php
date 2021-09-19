@@ -201,6 +201,17 @@ class PageConfiguration extends \Concrete\Core\Entity\Board\DataSource\Configura
     /**
      * {@inheritDoc}
      */
+    public function export(\SimpleXMLElement $element)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'export', [$element]);
+
+        return parent::export($element);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getConfigurationID()
     {
         if ($this->__isInitialized__ === false) {

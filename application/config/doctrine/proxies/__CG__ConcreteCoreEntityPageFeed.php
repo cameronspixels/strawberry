@@ -66,10 +66,10 @@ class Feed extends \Concrete\Core\Entity\Page\Feed implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
+            return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
         }
 
-        return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
+        return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
     }
 
     /**
@@ -240,6 +240,28 @@ class Feed extends \Concrete\Core\Entity\Page\Feed implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
 
         return parent::getDescription();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDisplaySystemPages()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDisplaySystemPages', []);
+
+        return parent::getDisplaySystemPages();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDisplaySystemPages(bool $pfDisplaySystemPages): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDisplaySystemPages', [$pfDisplaySystemPages]);
+
+        parent::setDisplaySystemPages($pfDisplaySystemPages);
     }
 
     /**

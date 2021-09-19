@@ -502,6 +502,17 @@ class Board extends \Concrete\Core\Entity\Board\Board implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
+    public function getExporter()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getExporter', []);
+
+        return parent::getExporter();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function assignPermissions($userOrGroup, $permissions = array (
 ), $accessType = 10, $cascadeToChildren = true)
     {

@@ -484,4 +484,15 @@ class Type extends \Concrete\Core\Entity\File\Image\Thumbnail\Type\Type implemen
         return parent::getDoubledVersion();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function export(\SimpleXMLElement $node)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'export', [$node]);
+
+        return parent::export($node);
+    }
+
 }

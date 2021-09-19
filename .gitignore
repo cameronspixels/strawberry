@@ -1,2 +1,4 @@
 application/files/*
-!application/files/index.html
+!application/files/index.html origin
+
+sitemap.xml
